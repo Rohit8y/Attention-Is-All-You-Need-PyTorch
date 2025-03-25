@@ -1,0 +1,38 @@
+# Configuration for Transformer Model Training
+
+# Checkpoint Path
+load_checkpoint = true
+
+# Training
+batch_size = 8
+num_epochs = 20
+lr = 0.0004
+scheduler_warmup_steps = 4000
+src_lang = "en"
+tgt_lang = "hi"
+model_folder = "models"
+model_basename = "transformer"
+output_dir = "results"
+
+#model
+model_d_model = 512
+model_seq_len = 281
+model_d_ff = 2048 #feed-forward intermediate dim
+model_layers = 6
+model_heads = 8
+model_dropout = 0.1
+
+#dataset
+data_path = "data/english2hindi_data_cleaned.json"
+data_train_split = 0.99
+
+#tokenizer
+tokenizer_file = "tokenizer_{0}.json"
+tkn_build_scratch = true
+tkn_max_vocab_size = 60000
+tkn_min_freq = 3
+
+#wandb properties
+wandb_entity = "training-transformers-vast"
+wandb_project = "attention-is-all-you-need-rohit"
+wandb_run_name = "transformer-training"
